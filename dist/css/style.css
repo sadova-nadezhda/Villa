@@ -1708,6 +1708,15 @@ h6 {
     grid-template-columns: 1fr 3fr;
   }
 
+  .contacts__group {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .contacts__title {
+    font-size: calc(80 * var(--width-multiplier));
+  }
+
   .contacts {
     padding-top: calc(60 * var(--width-multiplier));
     padding-bottom: calc(60 * var(--width-multiplier));
@@ -2015,6 +2024,22 @@ h6 {
 
   .contacts__heading {
     margin-bottom: calc(20 * var(--width-multiplier));
+  }
+
+  .contacts__title {
+    font-size: calc(40 * var(--width-multiplier));
+  }
+
+  .contacts__button {
+    width: 100%;
+  }
+
+  .contacts__wrap {
+    grid-template-columns: 100%;
+  }
+
+  .contacts__map {
+    height: calc(400 * var(--width-multiplier));
   }
 
   .feedback__container {
