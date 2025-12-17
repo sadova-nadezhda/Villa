@@ -30,16 +30,26 @@
     @@include('html/footer.html') 
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
     <script>
-      const center = [71.4442653, 51.14839];
+      const coords = [71.4442653, 51.14839];
 
       const map = new mapgl.Map('map', {
-          center,
+          center: coords,
           key: '41138baa-6f2f-4f90-9ee2-b6fe198401ee',
           style: '3a554b6f-f666-49d3-bf75-e41a87794d37',
           zoom: 16,
       });
-      const marker = new mapgl.Marker(map, {
-        coordinates: center,
+
+      function makeIcon(color = '#ff3b30') {
+        const svg = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="10" fill="${color}" stroke="white" stroke-width="3"/>
+          </svg>`;
+        return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+      }
+
+      new mapgl.Marker(map, {
+        coordinates: coords,
+        icon: makeIcon('#1F1D1C'),
       });
     </script>
     @@include('html/foot.html')
