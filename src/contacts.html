@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('html/head.html', { "title": "Контакты" })
+  <body>
+    @@include('html/header.html')
+
+    <main>
+      <section class="contacts section-top section-hidden">
+        <div class="container">
+          <div class="contacts__container">
+            <div class="contacts__heading heading">
+              <div class="contacts__subtitle subtitle color-grey">contacts</div>
+              <div class="contacts__group">
+                <h1 class="contacts__title text-up">свяжитесь с нами</h1>
+                <button class="contacts__button button button-border">Оставить заявку</button>
+              </div>
+            </div>
+            <div class="contacts__wrap">
+              <div class="contacts__col">
+
+              </div>
+              <div class="contacts__map" id="map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      @@include('html/feedback.html')
+    </main>
+
+    @@include('html/footer.html') 
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
+    <script>
+      const map = new mapgl.Map('map', {
+          center: [71.4415241, 51.1483095],
+          key: '41138baa-6f2f-4f90-9ee2-b6fe198401ee',
+          style: '3a554b6f-f666-49d3-bf75-e41a87794d37',
+      });
+    </script>
+    @@include('html/foot.html')
+  </body>
+</html>
