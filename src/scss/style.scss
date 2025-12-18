@@ -1453,6 +1453,10 @@
   margin: calc(32 * var(--width-multiplier)) auto;
   background-color: var(--white, $white);
   z-index: 1;
+  @media (max-width: 767px) {
+    width: calc(100% - calc(32 * var(--width-multiplier)));
+    margin: calc(50 * var(--width-multiplier)) auto;
+  }
   &__container {
     padding: calc(60 * var(--width-multiplier)) calc(40 * var(--width-multiplier));
     @media (max-width: 767px) {

@@ -79,6 +79,17 @@ window.addEventListener("load", () => {
     addPadTop(header, sectionTop);
   }
 
+  function handleScroll() {
+    let scroll = window.scrollY;
+    if (scroll > 50) {
+      header.classList.add("scroll");
+    } else {
+      header.classList.remove("scroll");
+    }
+  }
+
+  handleScroll();
+
   // ====== Lenis ======
 
   const lenis = new Lenis({
@@ -249,7 +260,7 @@ window.addEventListener("load", () => {
   // ====== Modals ======
 
   const modalWrapper = document.querySelector('.modals');
-   if (modalWrapper) {
+  if (modalWrapper) {
     const modals = Array.from(modalWrapper.querySelectorAll('.modal'));
     const body = document.body;
 
@@ -402,6 +413,12 @@ window.addEventListener("load", () => {
     if (sectionTop && header) {
       addPadTop(header, sectionTop);
     }
+  });
+
+  // ====== Scroll ======
+
+  window.addEventListener('scroll', function() {
+    handleScroll();
   });
 
 
