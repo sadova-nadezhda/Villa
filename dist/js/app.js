@@ -203,9 +203,8 @@ window.addEventListener("load", () => {
     root.querySelectorAll(".projectsSwiper").forEach((outerEl) => {
       if (outerEl.swiper) return;
 
-      const panel = outerEl.closest('[id^="projects-"]') || outerEl.parentElement;
-      const prev = outerEl.querySelector(".projects-prev");
-      const next = outerEl.querySelector(".projects-next");
+      const prev = outerEl.closest('.main-projects__box').querySelector(".projects-prev");
+      const next = outerEl.closest('.main-projects__box').querySelector(".projects-next");
 
       new Swiper(outerEl, {
         navigation: { prevEl: prev, nextEl: next },
@@ -229,25 +228,26 @@ window.addEventListener("load", () => {
     outerEl.querySelectorAll(".projectsSwiper2").forEach((innerEl) => {
       if (innerEl.swiper) return;
 
-      const pagination = outerEl.querySelector(".projects-pagination");
-      const prev2 = outerEl.querySelector(".projects-prev-2");
-      const next2 = outerEl.querySelector(".projects-next-2");
+      const slideEl = innerEl.closest(".main-projects__slide") || innerEl.closest(".swiper-slide") || innerEl.parentElement;
+
+      const pagination = slideEl?.querySelector(".projects-pagination");
+      const prev2 = slideEl?.querySelector(".projects-prev-2");
+      const next2 = slideEl?.querySelector(".projects-next-2");
 
       new Swiper(innerEl, {
         spaceBetween: s(20),
         nested: true,
-        watchSlidesProgress: true, 
+        watchSlidesProgress: true,
         observer: true,
         observeParents: true,
 
-        pagination: {
-          el: pagination,
-          type: "progressbar",
-        },
-        navigation: {
-          prevEl: prev2,
-          nextEl: next2,
-        },
+        pagination: pagination
+          ? { el: pagination, type: "progressbar" }
+          : undefined,
+
+        navigation: (prev2 && next2)
+          ? { prevEl: prev2, nextEl: next2 }
+          : undefined,
       });
     });
   }
@@ -255,6 +255,7 @@ window.addEventListener("load", () => {
   initProjectsSliders();
 
   document.querySelectorAll(".projectsSwiper, .projectsSwiper2").forEach(el => el.swiper?.update());
+
 
 
   // ====== Modals ======
