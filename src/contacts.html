@@ -12,7 +12,7 @@
               <div class="contacts__subtitle subtitle color-grey">contacts</div>
               <div class="contacts__box">
                 <h1 class="contacts__title text-up">свяжитесь с нами</h1>
-                <button class="contacts__button button button-border">Оставить заявку</button>
+                <a class="contacts__button button button-border modal-btn" data-type="feedback">Оставить заявку</a>
               </div>
             </div>
             <div class="contacts__wrap">
@@ -46,6 +46,7 @@
       </section>
     </main>
 
+    @@include('html/modals.html') 
     @@include('html/footer.html') 
     <script src="https://mapgl.2gis.com/api/js/v1"></script>
     <script>

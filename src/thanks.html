@@ -5,12 +5,18 @@
     @@include('html/header.html')
 
     <main>
-      <section class="page section-top section-hidden">
+      <section class="page page-thanks section-top section-hidden">
         <div class="container">
-          <div class="page__container">
-            
+          <div class="page__container page-thanks__container">
+            <h1 class="page__txt page-thanks__txt s">Спасибо! Ваша заявка принята</h1>
+            <a href="/" class="page__button page-thanks__button button button-border">На главную</a>
           </div>
         </div>
+        <picture>
+          <source srcset="@img/thanks-mb.png" media="(max-width: 767px)">
+          <img class="page-back" src="@img/thanks.png" alt="">
+        </picture>
+        
       </section>
     </main>
 

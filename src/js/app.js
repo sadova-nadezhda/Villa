@@ -114,10 +114,10 @@ window.addEventListener("load", () => {
   var categorySwiper = new Swiper(".categorySwiper", {
     slidesPerView: 1.05,
     spaceBetween: s(16),
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
     pagination: {
       el: ".category-pagination",
       type: "progressbar",
@@ -143,14 +143,29 @@ window.addEventListener("load", () => {
     slidesPerView: 2.5,
     spaceBetween: s(20),
     loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
     breakpoints: {
       1025: {
         spaceBetween: s(40),
       },
+    },
+  });
+
+  var aboutSwiper2 = new Swiper(".aboutSwiper2", {
+    spaceBetween: s(20),
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
+    navigation: {
+      nextEl: ".about-next",
+      prevEl: ".about-prev",
+    },
+    pagination: {
+      el: ".about-pagination",
     },
   });
 
