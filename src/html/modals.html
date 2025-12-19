@@ -1,5 +1,5 @@
-<div class="modals">
-  <div class="modal" data-type="feedback">
+<div class="modals" data-lenis-prevent>
+  <div class="modal modal-feedback" data-type="feedback">
     <div class="modal__container">
       <button class="modal__close">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,6 +9,7 @@
       <div class="modal__form">
         <h2 class="modal__caption s">Оставьте заявку</h2>
         <form action="">
+          <input type="hidden" name="category" value="">
           <div class="form__fieldset">
             <input type="text" name="" placeholder="Имя*" required>
             <input type="email" name="" placeholder="E-mail*" required>
@@ -19,6 +20,48 @@
             <span class="color-grey">Нажимая кнопку “Отправить” вы подтверждаете согласие на обработку персональных данных</span>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-category" data-type="category">
+    <div class="modal__container modal-category__container">
+      <button class="modal__close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.9961 0.707031L8.70703 7.99609L16 15.2891L15.293 15.9961L8 8.70312L0.707031 15.9961L0 15.2891L7.29297 7.99609L0.00390625 0.707031L0.710938 0L8 7.28906L15.2891 0L15.9961 0.707031Z" fill="#FFFFFF"/>
+        </svg>
+      </button>
+      <div class="modal__left modal-category__left">
+        <h2 class="modal__caption modal-category__caption s">Palazzo Veneto</h2>
+        <div class="modal__desc modal-category__desc color-grey">
+          <p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p>
+          <p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p>
+          <p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>
+        </div>
+        <a href="" class="modal__button modal-category__button button button-border modal-btn" data-type="feedback" data-category="Palazzo Veneto">Оставить заявку</a>
+      </div>
+      <div class="modal__slider modal-category__slider">
+        <div class="swiper modalSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="@img/projects-1.png" alt=""></div>
+            <div class="swiper-slide"><img src="@img/projects-1.png" alt=""></div>
+            <div class="swiper-slide"><img src="@img/projects-1.png" alt=""></div>
+          </div>
+        </div>
+        <div class="modal-category__navigation">
+          <div class="modal-pagination"></div>
+          <div class="modal-category__arrows">
+            <div class="modal-category__arrow modal-prev">
+              <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 3L2 11L10 19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="modal-category__arrow modal-next">
+              <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3L10 11L2 19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

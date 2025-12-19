@@ -199,6 +199,18 @@ window.addEventListener("load", () => {
   //   },
   // });
 
+  window.modalSwiper = new Swiper(".modalSwiper", {
+    spaceBetween: s(20),
+    pagination: {
+      el: ".modal-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".modal-next",
+      prevEl: ".modal-prev",
+    },
+  });
+
   function initProjectsSliders(root = document) {
     root.querySelectorAll(".projectsSwiper").forEach((outerEl) => {
       if (outerEl.swiper) return;
@@ -256,14 +268,11 @@ window.addEventListener("load", () => {
 
   document.querySelectorAll(".projectsSwiper, .projectsSwiper2").forEach(el => el.swiper?.update());
 
-
-
   // ====== Modals ======
 
   const modalWrapper = document.querySelector('.modals');
   if (modalWrapper) {
     const modals = Array.from(modalWrapper.querySelectorAll('.modal'));
-    const body = document.body;
 
     const getModalByType = (type) =>
       modalWrapper.querySelector(`.modal[data-type="${type}"]`);
@@ -271,19 +280,13 @@ window.addEventListener("load", () => {
     const showWrapper = () => {
       modalWrapper.style.opacity = 1;
       modalWrapper.style.pointerEvents = 'all';
-
-      if (window.lenis) {
-        window.lenis.stop();
-      }
+      if (window.lenis) window.lenis.stop();
     };
 
     const hideWrapper = () => {
       modalWrapper.style.opacity = 0;
       modalWrapper.style.pointerEvents = 'none';
-
-      if (window.lenis) {
-        window.lenis.start();
-      }
+      if (window.lenis) window.lenis.start();
     };
 
     const openModal = (type) => {
@@ -299,11 +302,7 @@ window.addEventListener("load", () => {
       showWrapper();
 
       if (window.gsap) {
-        gsap.fromTo(
-          modal,
-          { y: '-100%' },
-          { y: '0%', duration: 0.5, ease: 'power3.out' }
-        );
+        gsap.fromTo(modal, { y: '-100%' }, { y: '0%', duration: 0.5, ease: 'power3.out' });
       }
     };
 
@@ -330,11 +329,64 @@ window.addEventListener("load", () => {
       }
     };
 
+    const fillCategoryModal = (btnEl) => {
+      const modal = getModalByType('category');
+      if (!modal) return;
+
+      const title =
+        btnEl.dataset.title ||
+        btnEl.querySelector('.category__caption')?.textContent?.trim() ||
+        '';
+
+      const titleEl = modal.querySelector('.modal-category__caption');
+      if (titleEl) titleEl.textContent = title;
+
+      const descHtml =
+        btnEl.dataset.desc ||
+        '';
+
+      const descEl = modal.querySelector('.modal-category__desc');
+      if (descEl) descEl.innerHTML = descHtml;
+
+      let gallery = [];
+      try {
+        gallery = btnEl.dataset.gallery ? JSON.parse(btnEl.dataset.gallery) : [];
+      } catch (e) {
+        gallery = [];
+      }
+
+      const feedbackBtn = modal.querySelector(
+        '.modal-btn[data-type="feedback"]'
+      );
+
+      if (feedbackBtn) {
+        feedbackBtn.dataset.category = title;
+      }
+
+      const wrapper = modal.querySelector('.modalSwiper .swiper-wrapper');
+      if (wrapper) {
+        wrapper.innerHTML = (gallery.length ? gallery : ["@img/projects-1.png"]).map((src) => {
+          return `<div class="swiper-slide"><img src="${src}" alt=""></div>`;
+        }).join('');
+      }
+
+      if (window.modalSwiper && typeof window.modalSwiper.update === 'function') {
+        window.modalSwiper.update();
+        window.modalSwiper.slideTo(0, 0);
+      }
+    };
+
     document.querySelectorAll('.modal-btn').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const type = btn.dataset.type;
-        if (type) openModal(type);
+        if (!type) return;
+
+        if (type === 'category') {
+          fillCategoryModal(btn);
+        }
+
+        openModal(type);
       });
     });
 
@@ -350,6 +402,20 @@ window.addEventListener("load", () => {
       }
     });
   }
+
+  const feedbackModal = document.querySelector('.modal-feedback');
+  const categoryInput = feedbackModal?.querySelector('input[name="category"]');
+
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.modal-btn[data-type="feedback"]');
+    if (!btn) return;
+
+    const category = btn.dataset.category || '';
+
+    if (categoryInput) {
+      categoryInput.value = category;
+    }
+  });
 
   // ====== Mask for phone ======
 

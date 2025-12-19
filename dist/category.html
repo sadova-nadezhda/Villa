@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Кухня и другие категории</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251218190812" />
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby/dist/css/tabby-ui.min.css?_v=20251218190812">
-  <link rel="stylesheet" href="css/style.css?_v=20251218190812" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20251219132724" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby/dist/css/tabby-ui.min.css?_v=20251219132724">
+  <link rel="stylesheet" href="css/style.css?_v=20251219132724" />
 </head>
 
   <body>
@@ -18,7 +18,7 @@
       <a href="/" class="header__logo">
         <img src="img/logo.png" alt="" />
       </a>
-      <nav class="header__nav nav-catalog">
+      <nav class="header__nav nav-catalog" data-lenis-prevent>
         <button class="header__close nav-catalog__close">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.9961 0.707031L8.70703 7.99609L16 15.2891L15.293 15.9961L8 8.70312L0.707031 15.9961L0 15.2891L7.29297 7.99609L0.00390625 0.707031L0.710938 0L8 7.28906L15.2891 0L15.9961 0.707031Z" fill="white"/>
@@ -38,7 +38,7 @@
           <li><a href="">Дизайн интерьера</a></li>
         </ul>
       </nav>
-      <nav class="header__nav nav-main">
+      <nav class="header__nav nav-main" data-lenis-prevent>
         <div class="container">
           <div class="nav-main__container">
             <button class="header__close nav-main__close">
@@ -111,42 +111,90 @@
             <div class="category__slider">
               <div class="swiper categorySwiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide category__card">
-                    <div class="category__img"><img src="img/main-category-1.png" alt=""></div>
-                    <div class="category__caption text-up">Palazzo Veneto</div>
-                    <div class="category__txt">Массивные элементы, глубокие оттенки и аристократичный шарм.</div>
-                  </div>
-                  <div class="swiper-slide category__card">
-                    <div class="category__img"><img src="img/main-category-2.png" alt=""></div>
-                    <div class="category__caption text-up">Milano Eleganza</div>
-                    <div class="category__txt text-s color-grey">Итальянский минимализм в лучшем его проявлении.</div>
-                  </div>
-                  <div class="swiper-slide category__card">
-                    <div class="category__img"><img src="img/main-category-3.png" alt=""></div>
-                    <div class="category__caption text-up">Collezione Firenze</div>
-                    <div class="category__txt text-s color-grey">Утончённая классика с изящными деталями и благородными материалами.</div>
-                  </div>
-                  <div class="swiper-slide category__card">
-                    <div class="category__img"><img src="img/main-category-4.png" alt=""></div>
-                    <div class="category__caption text-up">Linea Aurelia</div>
-                    <div class="category__txt text-s color-grey">Современный взгляд на роскошь: гармония чистых линий и дорогих фактур.</div>
-                  </div>
-                  <div class="swiper-slide category__card">
+                  <div 
+                    class="swiper-slide category__card modal-btn" 
+                    data-type="category"
+                    data-title="Palazzo Veneto"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
                     <div class="category__img"><img src="img/main-category-1.png" alt=""></div>
                     <div class="category__caption text-up">Palazzo Veneto</div>
                     <div class="category__txt text-s color-grey">Массивные элементы, глубокие оттенки и аристократичный шарм.</div>
                   </div>
-                  <div class="swiper-slide category__card">
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Milano Eleganza"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
                     <div class="category__img"><img src="img/main-category-2.png" alt=""></div>
                     <div class="category__caption text-up">Milano Eleganza</div>
                     <div class="category__txt text-s color-grey">Итальянский минимализм в лучшем его проявлении.</div>
                   </div>
-                  <div class="swiper-slide category__card">
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Collezione Firenze"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
                     <div class="category__img"><img src="img/main-category-3.png" alt=""></div>
                     <div class="category__caption text-up">Collezione Firenze</div>
                     <div class="category__txt text-s color-grey">Утончённая классика с изящными деталями и благородными материалами.</div>
                   </div>
-                  <div class="swiper-slide category__card">
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Linea Aurelia"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
+                    <div class="category__img"><img src="img/main-category-4.png" alt=""></div>
+                    <div class="category__caption text-up">Linea Aurelia</div>
+                    <div class="category__txt text-s color-grey">Современный взгляд на роскошь: гармония чистых линий и дорогих фактур.</div>
+                  </div>
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Palazzo Veneto"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
+                    <div class="category__img"><img src="img/main-category-1.png" alt=""></div>
+                    <div class="category__caption text-up">Palazzo Veneto</div>
+                    <div class="category__txt text-s color-grey">Массивные элементы, глубокие оттенки и аристократичный шарм.</div>
+                  </div>
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Milano Eleganza"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
+                    <div class="category__img"><img src="img/main-category-2.png" alt=""></div>
+                    <div class="category__caption text-up">Milano Eleganza</div>
+                    <div class="category__txt text-s color-grey">Итальянский минимализм в лучшем его проявлении.</div>
+                  </div>
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Collezione Firenze"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
+                    <div class="category__img"><img src="img/main-category-3.png" alt=""></div>
+                    <div class="category__caption text-up">Collezione Firenze</div>
+                    <div class="category__txt text-s color-grey">Утончённая классика с изящными деталями и благородными материалами.</div>
+                  </div>
+                  <div 
+                    class="swiper-slide category__card modal-btn"
+                    data-type="category"
+                    data-title="Linea Aurelia"
+                    data-desc="<p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p><p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p><p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>"
+                    data-gallery='["img/projects-1.png","img/projects-1.png","img/projects-1.png"]'
+                  >
                     <div class="category__img"><img src="img/main-category-4.png" alt=""></div>
                     <div class="category__caption text-up">Linea Aurelia</div>
                     <div class="category__txt text-s color-grey">Современный взгляд на роскошь: гармония чистых линий и дорогих фактур.</div>
@@ -195,6 +243,74 @@
 </section>
     </main>
 
+    <div class="modals" data-lenis-prevent>
+  <div class="modal modal-feedback" data-type="feedback">
+    <div class="modal__container">
+      <button class="modal__close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.9961 0.707031L8.70703 7.99609L16 15.2891L15.293 15.9961L8 8.70312L0.707031 15.9961L0 15.2891L7.29297 7.99609L0.00390625 0.707031L0.710938 0L8 7.28906L15.2891 0L15.9961 0.707031Z" fill="#1F1D1C"/>
+        </svg>
+      </button>
+      <div class="modal__form">
+        <h2 class="modal__caption s">Оставьте заявку</h2>
+        <form action="">
+          <input type="hidden" name="category" value="">
+          <div class="form__fieldset">
+            <input type="text" name="" placeholder="Имя*" required>
+            <input type="email" name="" placeholder="E-mail*" required>
+            <input type="tel" name="" placeholder="Номер телефона*" required>
+          </div>
+          <div class="form__bottom">
+            <button type="submit" class="form__button button button-light">Отправить</button>
+            <span class="color-grey">Нажимая кнопку “Отправить” вы подтверждаете согласие на обработку персональных данных</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal modal-category" data-type="category">
+    <div class="modal__container modal-category__container">
+      <button class="modal__close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15.9961 0.707031L8.70703 7.99609L16 15.2891L15.293 15.9961L8 8.70312L0.707031 15.9961L0 15.2891L7.29297 7.99609L0.00390625 0.707031L0.710938 0L8 7.28906L15.2891 0L15.9961 0.707031Z" fill="#FFFFFF"/>
+        </svg>
+      </button>
+      <div class="modal__left modal-category__left">
+        <h2 class="modal__caption modal-category__caption s">Palazzo Veneto</h2>
+        <div class="modal__desc modal-category__desc color-grey">
+          <p>Кухни с характером дворцовой архитектуры Венеции: массивные элементы, глубокие оттенки и аристократичный шарм.</p>
+          <p>Каждая деталь продумана так, чтобы подчеркнуть статус и изысканный вкус владельца.</p>
+          <p>Это коллекция для тех, кто ценит вечную классику и хочет привнести в дом атмосферу итальянского дворца.</p>
+        </div>
+        <a href="" class="modal__button modal-category__button button button-border modal-btn" data-type="feedback" data-category="Palazzo Veneto">Оставить заявку</a>
+      </div>
+      <div class="modal__slider modal-category__slider">
+        <div class="swiper modalSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/projects-1.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/projects-1.png" alt=""></div>
+            <div class="swiper-slide"><img src="img/projects-1.png" alt=""></div>
+          </div>
+        </div>
+        <div class="modal-category__navigation">
+          <div class="modal-pagination"></div>
+          <div class="modal-category__arrows">
+            <div class="modal-category__arrow modal-prev">
+              <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 3L2 11L10 19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="modal-category__arrow modal-next">
+              <svg width="12" height="22" viewBox="0 0 12 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3L10 11L2 19" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
     <footer class="footer">
   <div class="container">
     <div class="footer__container">
@@ -277,10 +393,10 @@
   </div>
 </footer>
  
-    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js?_v=20251218190812"></script> 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251218190812"></script>
-<script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby/dist/js/tabby.polyfills.min.js?_v=20251218190812"></script>
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js?_v=20251218190812"></script>
-<script src="js/app.js?_v=20251218190812"></script>
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js?_v=20251219132724"></script> 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20251219132724"></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/tabby/dist/js/tabby.polyfills.min.js?_v=20251219132724"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js?_v=20251219132724"></script>
+<script src="js/app.js?_v=20251219132724"></script>
   </body>
 </html>
